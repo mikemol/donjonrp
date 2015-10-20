@@ -83,10 +83,9 @@ The fractal world generator is based on code by [John Olsson](http://www.lysator
 A sphere is bisected along a random great circle, and one half elevated above the other. Repeating this process thousands of times produces a faulted terrain. Next, the elevation values are sorted into a histogram to determine sea level. Finally, the elevation map is scaled into a color map, and transformed into the desired projection.
 ##Source Code
 
-The original code has a few minor errors which can cause a segmentation fault and crash. Version 2.2a linked below fixes these problems. Both versions are provided under the [GNU General Public License, version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt).
+The original code has a few minor errors which can cause a segmentation fault and crash. Version 2.2a fixes these problems. Both versions are provided under the [GNU General Public License, version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt). (See git repository history for older versions)
 
-    worldgen 2.2, by John Olsson
-    worldgen 2.2a, fixed
+ * [worldgen.c](worldgen/worldgen.c)
 
 ##The World of Tumult
 
@@ -95,8 +94,8 @@ The original code has a few minor errors which can cause a segmentation fault an
 #Random Dungeon Generator
 ##A Brief History
 
-I began work on my dungeon generator sometime around 1999. It was originally hosted on the demonweb (my personal home page), moved to the Dire Press website in May 2006, and then to the donjon website in Sept 2009. Early versions included basic dungeon layout and size options, and generated maps as HTML tables of black and white cells. Code to generate images for dungeon maps was added in March 2009, and for cavernous dungeons in Sept 2010.
-How it Works
+Drow began work on his dungeon generator sometime around 1999. It was originally hosted on the demonweb (his personal home page), moved to the Dire Press website in May 2006, and then to the donjon website in Sept 2009. Early versions included basic dungeon layout and size options, and generated maps as HTML tables of black and white cells. Code to generate images for dungeon maps was added in March 2009, and for cavernous dungeons in Sept 2010.
+##How it Works
 
 A dungeon is constructed as a two-dimensional matrix of integers, each representing one cell. Within an integer, each bit indicates a different state, such as 0x01 for blocked cells, 0x02 for cells in rooms, and 0x04 for cells in corridors. Rooms and corridors always fall along odd-numbered columns and rows, and rooms are always odd numbers in width and height.
 
@@ -109,7 +108,7 @@ Caverns are generated using cellular automata, inspired by [Jim Babcock's articl
 
 The following source code is a simplified implementation of the donjon random dungeon generator. It is provided under the [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
 
-    [dungeon.pl](dungeon/dungeon.pl)
+* [dungeon.pl](dungeon/dungeon.pl)
 
 ##The Dungeon of Random Death
 
