@@ -113,5 +113,5 @@ The following source code is a simplified implementation of the donjon random du
 
 ##The Dungeon of Random Death
 
-![The Dungeon of Random Death](dungeon/10406255859.gif)
+![The Dungeon of Random Death](dungeon/1406255859.gif)
 
