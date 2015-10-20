@@ -212,7 +212,7 @@ void main(int argc, char **argv)
   index2 = (XRange/2)*YRange;
   for (j=0, row=0; j<XRange/2; j++)
   {
-    for (i=0; i<YRange; i++)
+    for (i=1; i<YRange; i++)                    /* fix */
     {
       WorldMapArray[row+index2+YRange-i] = WorldMapArray[row+i];
     }
@@ -337,7 +337,7 @@ void main(int argc, char **argv)
 NorthPoleFinished:
     FilledPixels=0;
     /* i==y, j==x */
-    for (i=YRange; i>0; i--)
+    for (i = (YRange - 1); i>0; i--)            /* fix */
     {
       for (j=0, row=0; j<XRange; j++)
       {
@@ -350,7 +350,7 @@ NorthPoleFinished:
         row += YRange;
       }
     }
-Finished:
+Finished:;
   }
   
   /* append .gif to SaveFile */
@@ -381,11 +381,11 @@ void FloodFill4(int x, int y, int OldColor)
     if (y-1 > 0)      FloodFill4(  x, y-1, OldColor);
     if (y+1 < YRange) FloodFill4(  x, y+1, OldColor);
     if (x-1 < 0)
-      FloodFill4(XRange, y, OldColor);
+      FloodFill4(XRange-1, y, OldColor);        /* fix */
     else
       FloodFill4(   x-1, y, OldColor);
     
-    if (x+1 > XRange)
+    if (x+1 >= XRange)                          /* fix */
       FloodFill4(     0, y, OldColor);
     else
       FloodFill4(   x+1, y, OldColor);
@@ -1101,4 +1101,3 @@ flush_char()
 }
 
 /* The End */
-
