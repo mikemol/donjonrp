@@ -1042,6 +1042,7 @@ sub image_dungeon {
   # write image
 
   open(OUTPUT,">$dungeon->{'seed'}.gif") and do {
+    binmode OUTPUT;
     print OUTPUT $ih->gif();
     close(OUTPUT);
   };
